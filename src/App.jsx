@@ -20,7 +20,7 @@ function App() {
   const [avatar, setAvatar] = useState('');
   const [avatarError, setAvatarError] = useState('');
   const [showTicket, setShowTicket] = useState(false);
-  const [ticketNumber, setTicketNumber] = useState(0);
+  const [ticketNumber, setTicketNumber] = useState('');
 
   const handleInputChange =  (e) => {
     const { name, value } = e.target;
@@ -75,7 +75,7 @@ function App() {
   };
   const handleGenerateAnother = () => {
     setShowTicket(false);
-    setTicketNumber(0);
+    setTicketNumber('');
     setFormData({
       name: '',
       email: '',
@@ -124,7 +124,7 @@ function App() {
                     </>
             ) : (
                 <>
-                    <h1 className="text-4xl px-96 mt-8 font-bold bg-gradient-to-r from-orange-700
+                    <h1 className="text-4xl mt-8 font-bold bg-gradient-to-r from-orange-700
                                     to-neutral-100 inline-block text-transparent bg-clip-text"
                     >
                         Your Journey to Coding Conf 2025 Starts Here!
@@ -147,11 +147,11 @@ function App() {
               ticketNumber={ticketNumber}
             />
 
-            {/*<div className="mt-8">*/}
-            {/*  <Button disabled={false} onClick={handleGenerateAnother} type="button">*/}
-            {/*    Generate Another Ticket*/}
-            {/*  </Button>*/}
-            {/*</div>*/}
+            <div className="mt-8">
+              <Button disabled={false} onClick={handleGenerateAnother} type="button">
+                Generate Another Ticket
+              </Button>
+            </div>
           </>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-md bg-neutral-800 bg-opacity-10 backdrop-blur-[3px] rounded-2xl p-6 shadow-lg">

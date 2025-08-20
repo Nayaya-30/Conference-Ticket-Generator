@@ -33,4 +33,18 @@ describe('Input', () => {
     
     expect(handleChange).toHaveBeenCalled();
   });
+
+  test('has correct name attribute when provided', () => {
+    render(<Input label="Test Label" type="text" name="testName" />);
+    
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveAttribute('name', 'testName');
+  });
+
+  test('has correct value when provided', () => {
+    render(<Input label="Test Label" type="text" value="test value" />);
+    
+    const input = screen.getByRole('textbox');
+    expect(input).toHaveValue('test value');
+  });
 });
