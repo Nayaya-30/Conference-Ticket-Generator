@@ -29,3 +29,12 @@ html, body {
     height: 100%;
     min-height: 100vh;
 }
+
+.ticket {
+    background-image: url("./assets/images/pattern-ticket.svg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100%;
+    width: 100%;
+}

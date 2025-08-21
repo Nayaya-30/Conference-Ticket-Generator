@@ -5,10 +5,10 @@ const Button = ({ children, onClick, disabled = false, type = "button" }) => {
                 type={type}
                 onClick={onClick} 
                 disabled={disabled}
-                className={`w-full font-bold py-3 px-4 rounded-lg transition duration-300 ${
+                className={`w-full font-bold py-2 px-4 rounded-lg transition duration-300 ${
                     disabled 
                         ? 'bg-neutral-500 text-neutral-300 cursor-not-allowed' 
-                        : 'bg-orange-500 hover:bg-orange-700 text-neutral-900 hover:text-white'
+                        : 'bg-orange-700 hover:bg-orange-500 text-neutral-900 active:border-r-4 active:border-neutral-200'
                 }`}
                 aria-disabled={disabled}
             >

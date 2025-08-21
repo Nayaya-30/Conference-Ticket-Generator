@@ -1,4 +1,4 @@
-const Input = ({ label, type, placeholder, value = '', onChange, error }) => {
+const Input = ({ label, type, placeholder, value = '', name, onChange, error }) => {
     return (
         <>
             <div className="relative mb-4">
@@ -7,10 +7,11 @@ const Input = ({ label, type, placeholder, value = '', onChange, error }) => {
                 </label>
                 <input 
                     type={type} 
+                    name={name}
                     placeholder={placeholder}
                     value={value}
                     onChange={onChange}
-                    className={`w-full bg-neutral-700/70 text-neutral-100 font-bold py-2 px-4 rounded-lg 
+                    className={`w-full bg-neutral-700/50 text-neutral-100 font-bold py-2 px-4 rounded-lg 
                     focus:outline-none focus:ring-2 
                     ${
                         error ? 'focus:ring-red-600 border border-red-700' : 'focus:ring-orange-500'
