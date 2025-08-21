@@ -1,9 +1,9 @@
 const Ticket = ({ name, position, avatar, ticketNumber }) => {
     return (
-        <div className="ticket max-w-md p-4">
+        <div className="ticket p-4">
             {/*<div className="w-full h-1 bg-gradient-to-r from-transparent via-orange-500 to-transparent my-6"></div>*/}
 
-            <div className="relative flex flex-col items-left justify-center gap-16">
+            <div className="relative w-full flex flex-col items-left justify-center gap-16">
                 {avatar && (
                     <>
                         <div className="flex gap-4">
