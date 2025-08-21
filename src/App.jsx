@@ -20,7 +20,7 @@ function App() {
   const [avatar, setAvatar] = useState('');
   const [avatarError, setAvatarError] = useState('');
   const [showTicket, setShowTicket] = useState(false);
-  const [ticketNumber, setTicketNumber] = useState(0);
+  const [ticketNumber, setTicketNumber] = useState('');
 
   const handleInputChange =  (e) => {
     const { name, value } = e.target;
@@ -75,7 +75,7 @@ function App() {
   };
   const handleGenerateAnother = () => {
     setShowTicket(false);
-    setTicketNumber(0);
+    setTicketNumber('');
     setFormData({
       name: '',
       email: '',
@@ -124,7 +124,7 @@ function App() {
                     </>
             ) : (
                 <>
-                    <h1 className="text-4xl px-96 mt-8 font-bold bg-gradient-to-r from-orange-700
+                    <h1 className="text-4xl mt-8 font-bold bg-gradient-to-r from-orange-700
                                     to-neutral-100 inline-block text-transparent bg-clip-text"
                     >
                         Your Journey to Coding Conf 2025 Starts Here!
