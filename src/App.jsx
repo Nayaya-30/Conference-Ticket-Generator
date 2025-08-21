@@ -147,11 +147,11 @@ function App() {
               ticketNumber={ticketNumber}
             />
 
-            {/*<div className="mt-8">*/}
-            {/*  <Button disabled={false} onClick={handleGenerateAnother} type="button">*/}
-            {/*    Generate Another Ticket*/}
-            {/*  </Button>*/}
-            {/*</div>*/}
+            <div className="mt-8">
+              <Button disabled={false} onClick={handleGenerateAnother} type="button">
+                Generate Another Ticket
+              </Button>
+            </div>
           </>
         ) : (
           <form onSubmit={handleSubmit} className="max-w-md bg-neutral-800 bg-opacity-10 backdrop-blur-[3px] rounded-2xl p-6 shadow-lg">

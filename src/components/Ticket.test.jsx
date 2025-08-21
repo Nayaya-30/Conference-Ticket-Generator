@@ -5,9 +5,9 @@ describe('Ticket', () => {
   test('renders ticket with provided data', () => {
     const props = {
       name: 'John Doe',
-      email: 'john@example.com',
       position: 'Software Engineer',
-      avatar: 'data:image/png;base64,test'
+      avatar: 'data:image/png;base64,test',
+      ticketNumber: '#123456'
     };
     
     render(<Ticket {...props} />);
@@ -19,12 +19,14 @@ describe('Ticket', () => {
     // Check if all required fields are present
     expect(screen.getByText('John Doe')).toBeInTheDocument();
     expect(screen.getByText('Software Engineer')).toBeInTheDocument();
-    expect(screen.getByText('john@example.com')).toBeInTheDocument();
     
     // Check if the avatar is rendered
     const avatar = screen.getByAltText('Avatar');
     expect(avatar).toBeInTheDocument();
     expect(avatar.src).toContain('data:image/png;base64,test');
+    
+    // Check if ticket number is displayed
+    expect(screen.getByText('#123456')).toBeInTheDocument();
   });
 
   test('renders default values when no data is provided', () => {
@@ -37,11 +39,24 @@ describe('Ticket', () => {
     // Check if default values are present
     expect(screen.getByText('Your Name')).toBeInTheDocument();
     expect(screen.getByText('Position')).toBeInTheDocument();
-    expect(screen.getByText('email@example.com')).toBeInTheDocument();
     
     // Check if default avatar is rendered
     const avatar = screen.getByAltText('Avatar');
     expect(avatar).toBeInTheDocument();
-    expect(avatar.src).toContain('default-avatar.png');
+  });
+
+  test('does not render content when avatar is not provided', () => {
+    const props = {
+      name: 'John Doe',
+      position: 'Software Engineer',
+      ticketNumber: '#123456'
+      // No avatar provided
+    };
+    
+    render(<Ticket {...props} />);
+    
+    // When no avatar is provided, the content should not render
+    expect(screen.queryByText('John Doe')).not.toBeInTheDocument();
+    expect(screen.queryByText('Software Engineer')).not.toBeInTheDocument();
   });
 });

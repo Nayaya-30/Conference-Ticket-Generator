@@ -16,8 +16,14 @@
     animation: logo-spin infinite 20s linear;
   }
 }
-
-html, body {
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body, html {
+    margin: 0;
+    padding: 0;
     height: 100%;
 }
 
@@ -28,13 +34,21 @@ html, body {
     background-position: center;
     height: 100%;
     min-height: 100vh;
+    overflow: hidden;
+}
+.bg img {
+    pointer-events: none;
+    user-select: none;
 }
 
 .ticket {
     background-image: url("./assets/images/pattern-ticket.svg");
-    background-size: cover;
+    background-size: 100% 100%;
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
     width: 100%;
+    max-width: 800px;
+    object-fit: cover;
+    aspect-ratio: 2/1;
 }

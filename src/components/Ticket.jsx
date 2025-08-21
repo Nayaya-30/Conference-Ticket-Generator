@@ -29,7 +29,7 @@ const Ticket = ({ name, position, avatar, ticketNumber }) => {
                             </div>
                         </div>
 
-                        <span className={'absolute rotate-90 right-0 text-xl text-neutral-800 font-bold'}>{ticketNumber}</span>
+                        <span className={'absolute rotate-90 right-[-14px] text-xl text-neutral-800 font-bold'}>{ticketNumber}</span>
                     </>
                 )}
             </div>
